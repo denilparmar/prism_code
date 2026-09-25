@@ -1,9 +1,7 @@
 from langchain.agents import create_agent
-
-
 from llm.factory import get_llm
 from agent.tools import search_codebase
-from memory.short_term import get_checkpointer
+from memory.short_term import get_checkpointer, get_summarization_middleware
 from observability.logger import get_logger
 
 
@@ -21,6 +19,7 @@ def build_agent():
    llm = get_llm()
    tools = [search_codebase]
    checkpointer = get_checkpointer()
+   middleware = get_summarization_middleware()
 
 
    return create_agent(
@@ -28,4 +27,5 @@ def build_agent():
        tools=tools,
        system_prompt=SYSTEM_PROMPT,
        checkpointer=checkpointer,
+       middleware=[middleware],
    )
