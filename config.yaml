@@ -15,7 +15,7 @@ elasticsearch:
  index_name: codebase
 
 vector_store:
- provider: chromadb
+ provider: qdrant
 
 qdrant:
- collection_name: codebase
+ collection_name: prism_codebase
