@@ -1,9 +1,11 @@
 from langchain.agents import create_agent
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
-from agent.tools import search_codebase
+
 from llm.factory import get_llm
+from agent.tools import search_codebase
+from memory.short_term import get_checkpointer
 from observability.logger import get_logger
+
 
 logger = get_logger(__name__)
 
@@ -15,12 +17,15 @@ If you cannot find the answer in the codebase, say so explicitly."""
 
 
 def build_agent():
-  """Create and return a LangChain agent."""
-  llm = get_llm()
-  tools = [search_codebase]
-  logger.info("Creating agent")
-  return create_agent(
-      llm,
-      tools=tools,
-      system_prompt=SYSTEM_PROMPT,
-  )
+   """Create and return a LangChain agent with persistent memory."""
+   llm = get_llm()
+   tools = [search_codebase]
+   checkpointer = get_checkpointer()
+
+
+   return create_agent(
+       llm,
+       tools=tools,
+       system_prompt=SYSTEM_PROMPT,
+       checkpointer=checkpointer,
+   )
