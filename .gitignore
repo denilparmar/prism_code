@@ -13,3 +13,5 @@ wheels/
 .chromadb/
 
 uv.lock
+
+.memory/
