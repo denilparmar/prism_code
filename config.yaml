@@ -1,3 +1,6 @@
+rag:
+ mode: hybrid # semantic | hybrid
+
 llm:
  provider: openai        # openai | anthropic
  model: gpt-4o
@@ -16,6 +19,7 @@ elasticsearch:
 
 vector_store:
  provider: qdrant
+ retrieval_mode: hybrid  # dense | sparse | hybrid
 
 qdrant:
- collection_name: prism_codebase
+ collection_name: prism_codebase_hybrid

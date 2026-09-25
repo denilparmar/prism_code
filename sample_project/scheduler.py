@@ -7,10 +7,11 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from enum import Enum
 from typing import Optional
-from models import Priority, Task, User
-from database import Database
+
+from audit_log import AuditEventType, AuditLogger
 from billing import BillingService
-from audit_log import AuditLogger, AuditEventType
+from database import Database
+from models import Priority, Task, User
 
 
 class RecurrenceInterval(Enum):

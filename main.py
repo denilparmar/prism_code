@@ -1,16 +1,15 @@
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 from rich.console import Console
 from rich.prompt import Prompt
 
-
-from config import config
-from context.indexers.factory import get_indexer, get_index_inspector
-from llm.factory import get_llm, get_embedder
 from agent.orchestrator import handle_query
+from config import config
+from context.indexers.factory import get_index_inspector, get_indexer
+from llm.factory import get_embedder, get_llm
 from observability.logger import get_logger
-
 
 # Load .env before anything else
 load_dotenv(Path(__file__).parent / ".env")

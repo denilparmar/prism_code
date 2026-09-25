@@ -4,10 +4,10 @@ Requires report:view permission (checked via PermissionPolicy).
 """
 
 from dataclasses import dataclass
-from models import Status, Priority
+
 from database import Database
+from models import Priority, Status, User
 from permissions import PermissionPolicy
-from models import User
 
 
 @dataclass

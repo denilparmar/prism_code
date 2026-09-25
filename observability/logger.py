@@ -1,6 +1,5 @@
 import logging
 
-
 # Set root logger to WARNING — suppresses noisy third-party library logs (OpenAI, httpcore etc.)
 logging.basicConfig(
    level=logging.WARNING,

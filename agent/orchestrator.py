@@ -1,7 +1,6 @@
 from agent.factory import build_agent
 from observability.logger import get_logger
 
-
 logger = get_logger(__name__)
 
 

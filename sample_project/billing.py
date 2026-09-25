@@ -4,8 +4,9 @@ Each user is on a plan tier that caps how many tasks they can create.
 """
 
 from enum import Enum
-from models import User
+
 from database import Database
+from models import User
 
 
 class PlanTier(Enum):

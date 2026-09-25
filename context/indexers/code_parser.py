@@ -1,13 +1,10 @@
-from pathlib import Path
 from dataclasses import dataclass
-
+from pathlib import Path
 
 from tree_sitter import Language, Parser
 from tree_sitter_languages import get_language, get_parser
 
-
 from observability.logger import get_logger
-
 
 logger = get_logger(__name__)
 

@@ -5,13 +5,13 @@ Enforces ownership rules, permission policy, billing limits, audit logging,
 and dispatches notifications on every state change.
 """
 
-from database import Database
-from models import Task, Priority, Status
-from auth import AuthService, AuthError
-from permissions import PermissionPolicy
+from audit_log import AuditEventType, AuditLogger
+from auth import AuthError, AuthService
 from billing import BillingService
-from audit_log import AuditLogger, AuditEventType
+from database import Database
+from models import Priority, Status, Task
 from notifications import NotificationService
+from permissions import PermissionPolicy
 
 
 class TaskService:

@@ -1,11 +1,9 @@
 from langchain.agents import create_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
-
-from llm.factory import get_llm
 from agent.tools import search_codebase
+from llm.factory import get_llm
 from observability.logger import get_logger
-
 
 logger = get_logger(__name__)
 

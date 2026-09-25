@@ -6,18 +6,18 @@ Run:
     python main.py
 """
 
-from database import Database
-from auth import AuthService
-from task_service import TaskService
-from permissions import PermissionPolicy, Role
-from billing import BillingService, PlanTier
 from audit_log import AuditLogger
-from notifications import NotificationService
-from reports import ReportService
-from scheduler import TaskScheduler, RecurrenceInterval
+from auth import AuthService
+from billing import BillingService, PlanTier
+from database import Database
 from integrations.email_client import EmailClient
 from integrations.slack_webhook import SlackWebhook
 from models import Priority
+from notifications import NotificationService
+from permissions import PermissionPolicy, Role
+from reports import ReportService
+from scheduler import RecurrenceInterval, TaskScheduler
+from task_service import TaskService
 
 
 def main():

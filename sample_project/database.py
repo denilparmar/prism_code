@@ -4,7 +4,8 @@ In a real app this would use SQLAlchemy or similar. Kept simple for demos.
 """
 
 from typing import Optional
-from models import Task, User, Status, Priority
+
+from models import Priority, Status, Task, User
 
 
 class Database:

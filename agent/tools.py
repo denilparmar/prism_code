@@ -1,4 +1,5 @@
 from langchain.tools import tool
+
 from context.retrievers.semantic_chroma import retrieve
 from observability.logger import get_logger
 

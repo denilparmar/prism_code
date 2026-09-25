@@ -3,9 +3,9 @@ notifications.py — Sends email and Slack alerts on task lifecycle events.
 Called by TaskService after every state-changing operation.
 """
 
-from models import Task, User
 from integrations.email_client import EmailClient, EmailMessage
 from integrations.slack_webhook import SlackWebhook
+from models import Task, User
 
 
 class NotificationService:

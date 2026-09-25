@@ -1,8 +1,8 @@
 import chromadb
+
 from config import config
 from llm.factory import get_embedder
 from observability.logger import get_logger
-
 
 logger = get_logger(__name__)
 

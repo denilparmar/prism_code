@@ -1,14 +1,13 @@
 import os
-from langchain_qdrant import QdrantVectorStore
+
 from langchain_core.documents import Document
+from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
 
-
 from config import config
-from context.indexers.code_parser import parse_file, get_source_files
+from context.indexers.code_parser import get_source_files, parse_file
 from llm.factory import get_embedder
 from observability.logger import get_logger
-
 
 logger = get_logger(__name__)
 
